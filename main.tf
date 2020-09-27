@@ -10,9 +10,9 @@ resource "azurerm_public_ip" "az_public_ip" {
   ip_version          = var.ip_version
 
   tags = {
-    Region      = "data.azurerm_resource_group.azure_rg.location"
-    Team        = "var.team_tag"
-    Environment = "var.env"
-    Creator     = "var.creator"
+    Region      = data.azurerm_resource_group.azure_rg.location
+    Team        = var.team_tag
+    Environment = var.env
+    Creator     = var.creator
   }
 }
